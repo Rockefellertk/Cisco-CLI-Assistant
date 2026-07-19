@@ -1,22 +1,12 @@
-name = "cisco-cli-assistant-bot"
+name = "cisco_cli_bot"
 main = "src/index.ts"
 compatibility_date = "2024-09-25"
 compatibility_flags = ["nodejs_compat"]
 
-# Free "Workers Free" plan is sufficient for this bot:
-#   - 100,000 requests/day
-#   - 1,000 KV reads/day free (+ generous free writes) — see README for limits
-#
-# Rename this binding is not needed, just create the namespace and paste its
-# id below (see README "Deployment" section for the exact commands).
 [[kv_namespaces]]
 binding = "BOT_KV"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_ID"
-
-# Secrets (BOT_TOKEN, WEBHOOK_SECRET, and optionally AI_API_KEY) are NOT set
-# here. Set them with `wrangler secret put <NAME>` — see README.
+id = "17074a928b9842a88402f4ae8d2b415a"
+preview_id = "17074a928b9842a88402f4ae8d2b415a"
 
 [vars]
-# Non-secret configuration can go here. Leave empty or add flags as needed.
 AI_ENABLED = "true"
