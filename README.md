@@ -1,245 +1,288 @@
-# Cisco CLI Assistant — Telegram Bot
+# 🌐 Cisco CLI Assistant — Telegram Bot on Cloudflare Workers
 
-A production-ready Telegram bot that helps network engineers quickly find
-Cisco CLI commands across **IOS, IOS-XE, IOS-XR and NX-OS** — in English
-or Persian, exact phrasing or natural language.
+A serverless Telegram bot that helps network engineers find Cisco CLI commands
+across **IOS, IOS-XE, IOS-XR, and NX-OS** — in English or Persian — without
+ever hallucinating a command.
 
-**Core principle: this bot never invents Cisco CLI.** Every answer comes
-from a curated local JSON database. If nothing matches, it says so
-instead of guessing. The optional AI layer is constrained to *picking*
-among real, existing database entries — it cannot generate a new one
-(see `app/ai.py` for how that's enforced).
+Runs **100% serverlessly on Cloudflare Workers** using Telegram **webhooks**.
+No VPS, no always-on process, no Docker container required. The free
+Cloudflare Workers plan is enough for long-term personal use.
 
 ---
 
-## Features
+## Why this architecture (no polling, no server)
 
-- Natural language search, English + Persian (`show arp`, `چطور BGP Neighbor رو ببینم؟`)
-- 100+ curated commands across 48 categories (routing, BGP/OSPF/ISIS,
-  MPLS/SR, EVPN/VXLAN, QoS/ACL/NAT, AAA, FHRP, multicast, L2 switching,
-  security, telemetry, and more)
-- Per-command detail: purpose, syntax, arguments, example, sample output,
-  notes, platform support, privilege level, configuration mode
-- Exact / alias / partial / fuzzy (misspelling-tolerant) / Persian search
-- `/convert` — see a command's equivalent across all 4 platforms at once
-- Favorites & recent history (per user, JSON-backed, swappable for SQLite)
-- Optional AI fallback for intent understanding when no local match is
-  found — constrained to existing DB entries only
+Telegram bots normally run in one of two modes:
+
+1. **Polling** — a process repeatedly calls `getUpdates` in a loop. This
+   requires something to keep running 24/7 (a VPS, a container, etc).
+2. **Webhook** — Telegram itself pushes each update as an HTTPS POST request
+   to a URL you control. Nothing needs to run continuously; your endpoint
+   just needs to exist and respond quickly.
+
+This project uses **mode 2**. Cloudflare Workers is a perfect fit because it:
+- Only executes code when a request arrives (no idle server, no cost while idle)
+- Terminates HTTPS for you automatically (Telegram requires HTTPS webhooks)
+- Has a generous free tier (100,000 requests/day) — more than enough for
+  personal or small-team use
+- Has global edge locations, so replies are fast worldwide
 
 ---
 
 ## Project Structure
 
 ```
-/app
-  bot.py          # entry point / wiring
-  handlers.py     # Telegram command & callback handlers
-  commands.py     # data models + in-memory DB + user data store
-  search.py       # exact/alias/partial/fuzzy/Persian search engine
-  ai.py           # constrained AI intent-matching fallback
-  keyboards.py    # inline keyboard builders
-  config.py       # .env-based configuration
+/src
+  index.ts          Worker entrypoint — handles POST /webhook
+  commands.ts        Routes /start, /search, etc. + natural language text
+  callbacks.ts        Routes inline keyboard button taps
+  telegram.ts         Minimal Telegram Bot API client (fetch-based)
+  db.ts                In-memory command database + search engine
+  ai.ts                Optional AI fallback layer (never invents commands)
+  keyboards.ts         Message formatting + inline keyboards
+  state.ts             KV-backed favorites/history per user
+  types.ts             Shared TypeScript types
+  handlers/
+    start.ts, search.ts, category.ts, platform.ts, favorites.ts
+
 /database
-  commands.json     # generated command database (100+ entries)
-  aliases.json       # flat alias -> command id index (debug/reference)
-  categories.json     # category list
-  generate_db.py        # regenerate the JSON files from curated source data
-  user_data.json          # created at runtime: per-user favorites/history
-/utils
-  logger.py       # logging setup
-  persian.py      # Persian text normalization + keyword translation
-README.md
-requirements.txt
+  commands.json        117 real Cisco CLI commands (expandable to thousands)
+  aliases.json          Precomputed alias -> command id lookup index
+  categories.json        Category list (English + Persian names)
+
+/scripts
+  set-webhook.mjs       Registers your Worker URL with Telegram
+  delete-webhook.mjs     Removes the webhook
+
+wrangler.toml           Cloudflare Workers configuration
+package.json
+tsconfig.json
 .env.example
-Dockerfile
-docker-compose.yml
 ```
 
 ---
 
-## Installation
+## How the search works
 
-Requires **Python 3.12+**.
+1. **Exact match** against title/aliases (normalized — case, Persian ZWNJ,
+   Arabic/Persian letter variants, punctuation all normalized away)
+2. **Alias-map lookup** — a precomputed dictionary of every known alias
+   (English + Persian: `arp`, `show arp`, `نمایش arp`, `جدول arp`, ...)
+3. **Partial substring match** against titles and aliases
+4. **Fuzzy match** (Levenshtein distance) — tolerates misspellings in both
+   English and Persian
+5. **AI fallback** (optional) — only triggered if steps 1–4 find nothing.
+   The AI is given your *entire command catalog* and instructed to return
+   only an existing catalog `id`, or `NONE`. It is architecturally
+   prevented from inventing new Cisco syntax — any id it returns that
+   isn't in the catalog is discarded.
+
+If nothing matches and the AI fallback is disabled or also finds nothing,
+the bot tells the user clearly instead of guessing.
+
+---
+
+## Deployment
+
+### 1. Prerequisites
+
+- A free [Cloudflare account](https://dash.cloudflare.com/sign-up)
+- Node.js 18+ installed locally
+- A Telegram account
+
+### 2. Create your bot with BotFather
+
+1. Open Telegram, search for **@BotFather**
+2. Send `/newbot`, follow the prompts (choose a name and a username ending in `bot`)
+3. BotFather will give you a **bot token** like `123456789:AAExample...` — save it
+
+### 3. Install dependencies
 
 ```bash
-git clone <your-repo-url> cisco-cli-bot
+git clone <this-repo>   # or unzip the provided archive
 cd cisco-cli-bot
-python3 -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env
+npm install
 ```
 
-The command database is already generated and committed at
-`database/commands.json`. If you edit `database/generate_db.py` to add
-more commands, regenerate it with:
+### 4. Log in to Cloudflare
 
 ```bash
-python database/generate_db.py
+npx wrangler login
 ```
 
----
-
-## Environment Variables
-
-Set these in `.env` (see `.env.example`):
-
-| Variable | Required | Description |
-|---|---|---|
-| `BOT_TOKEN` | **Yes** | Token from @BotFather |
-| `ADMIN_IDS` | No | Comma-separated Telegram user IDs (reserved for future admin features) |
-| `LOG_LEVEL` | No | `DEBUG` / `INFO` / `WARNING` / `ERROR` (default `INFO`) |
-| `LOG_FILE` | No | Path to rotating log file (default `logs/bot.log`) |
-| `FUZZY_THRESHOLD` | No | 0.0–1.0 fuzzy-match strictness (default `0.6`) |
-| `MAX_RESULTS` | No | Max search results shown as buttons (default `8`) |
-| `HISTORY_LIMIT` | No | Max recent lookups stored per user (default `20`) |
-| `AI_ENABLED` | No | `true`/`false` — enable the AI fallback layer (default `false`) |
-| `AI_PROVIDER` | No | `anthropic` or `openai` |
-| `ANTHROPIC_API_KEY` | If using Anthropic | Your Anthropic API key |
-| `ANTHROPIC_MODEL` | No | Default `claude-sonnet-4-6` |
-| `OPENAI_API_KEY` | If using OpenAI | Your OpenAI API key |
-| `OPENAI_MODEL` | No | Default `gpt-4o-mini` |
-
----
-
-## BotFather Setup
-
-1. Open Telegram, message **[@BotFather](https://t.me/BotFather)**.
-2. Send `/newbot`, choose a display name, then a unique username ending
-   in `bot` (e.g. `CiscoCliAssistantBot`).
-3. BotFather replies with an API token — copy it into `BOT_TOKEN` in `.env`.
-4. Optional but recommended:
-   - `/setdescription` — short description shown on the bot's profile
-   - `/setabouttext` — about text
-   - `/setcommands` — paste the list below so Telegram shows a slash-command menu:
-     ```
-     start - Welcome message
-     help - List all bot commands
-     search - Search for a Cisco command
-     category - Browse commands by category
-     platform - Pick a single platform's command
-     random - Get a random command
-     favorite - List your favorite commands
-     history - Show your recent lookups
-     explain - Full detailed explanation
-     convert - Show equivalents across all platforms
-     example - Show example + sample output
-     about - About this bot
-     ```
-
----
-
-## Running Locally
+### 5. Create the KV namespace (for favorites/history storage)
 
 ```bash
-source .venv/bin/activate
-python -m app.bot
+npx wrangler kv namespace create BOT_KV
+npx wrangler kv namespace create BOT_KV --preview
 ```
 
-The bot uses long polling, so no public URL or webhook is required for
-local development.
+Copy the `id` and `preview_id` values from the output into `wrangler.toml`:
 
----
+```toml
+[[kv_namespaces]]
+binding = "BOT_KV"
+id = "paste-id-here"
+preview_id = "paste-preview-id-here"
+```
 
-## Deploying to Docker
+### 6. Set secrets
+
+Secrets are stored encrypted by Cloudflare — never commit them to `.env`:
 
 ```bash
-docker compose up -d --build
+npx wrangler secret put BOT_TOKEN
+# paste the token from BotFather when prompted
+
+npx wrangler secret put WEBHOOK_SECRET
+# paste a random string, e.g. generate one with: openssl rand -hex 24
+
+# Optional — only if you want the AI fallback layer for unmatched queries:
+npx wrangler secret put AI_API_KEY
 ```
 
-This builds the image, regenerates the database at build time, and runs
-the bot with your `.env` file and a persisted `database/user_data.json` /
-`logs/` volume. View logs with `docker compose logs -f`.
+If you skip `AI_API_KEY`, the bot still works perfectly — it simply won't
+attempt AI-based intent mapping for queries the catalog search can't match,
+and will say so instead of guessing.
 
-Manual (no compose):
+### 7. Deploy
 
 ```bash
-docker build -t cisco-cli-bot .
-docker run -d --name cisco-cli-bot --env-file .env \
-  -v $(pwd)/logs:/app/logs \
-  cisco-cli-bot
+npm run deploy
+```
+
+Wrangler will print your Worker URL, e.g.:
+```
+https://cisco-cli-assistant-bot.yoursubdomain.workers.dev
+```
+
+### 8. Register the Telegram webhook
+
+```bash
+BOT_TOKEN=123456789:AAExample... \
+WORKER_URL=https://cisco-cli-assistant-bot.yoursubdomain.workers.dev \
+WEBHOOK_SECRET=the-same-random-string-from-step-6 \
+node scripts/set-webhook.mjs
+```
+
+You should see `"ok": true` in the response. Your bot is now live — open it
+in Telegram and send `/start`.
+
+---
+
+## Running locally (development)
+
+You can develop and test locally with `wrangler dev`, which runs a local
+copy of your Worker. Telegram can't reach `localhost` directly, so either:
+
+- Use `wrangler dev --remote` and point a temporary webhook at the tunnel
+  URL Wrangler gives you, **or**
+- Use a tunneling tool (e.g. `cloudflared tunnel`) to expose your local dev
+  server, then run `set-webhook.mjs` against that tunnel URL temporarily.
+
+```bash
+npm run dev
+```
+
+Remember to set `BOT_TOKEN` and `WEBHOOK_SECRET` as local dev vars too
+(create a `.dev.vars` file — Wrangler loads this automatically and it's
+gitignored):
+
+```
+BOT_TOKEN=123456789:AAExample...
+WEBHOOK_SECRET=your-random-string
+AI_API_KEY=
 ```
 
 ---
 
-## Deploying to Railway
+## Environment Variables / Secrets summary
 
-1. Push this repository to GitHub.
-2. In Railway, click **New Project → Deploy from GitHub repo** and select it.
-3. Railway will detect the `Dockerfile` automatically and build/deploy it.
-   If it instead defaults to Nixpacks, set the build to use the
-   Dockerfile explicitly in the service settings (**Settings → Build →
-   Builder: Dockerfile**).
-4. Under **Variables**, add `BOT_TOKEN` and any other variables from
-   `.env.example` you need.
-5. Since this bot runs on long polling (not a webhook), make sure the
-   service is deployed as a **Worker/Background service**, not exposed
-   as an HTTP service — Railway doesn't need to route traffic to it.
-6. Deploy. Check the **Logs** tab for `Bot is polling for updates.`
+| Name             | Type      | Required | Set via                          |
+|-------------------|-----------|----------|-----------------------------------|
+| `BOT_TOKEN`        | secret    | ✅        | `wrangler secret put BOT_TOKEN`    |
+| `WEBHOOK_SECRET`    | secret    | ✅        | `wrangler secret put WEBHOOK_SECRET` |
+| `AI_API_KEY`         | secret    | optional | `wrangler secret put AI_API_KEY`    |
+| `AI_ENABLED`          | var       | —        | `wrangler.toml` `[vars]` (default `"true"`) |
+| `BOT_KV`                | KV binding | ✅        | `wrangler.toml` `[[kv_namespaces]]` |
 
 ---
 
-## Deploying to Cloudflare Workers — important caveat
+## Cost / free-tier notes
 
-Cloudflare Workers run on the V8 isolate runtime and are designed for
-short-lived request/response handlers, not long-running background
-processes. **aiogram's default long-polling loop cannot run on Workers**,
-and Workers do not support arbitrary outbound Python processes.
-
-If you specifically want Cloudflare in the deployment path, the
-supported pattern is:
-
-1. Switch the bot to **webhook mode** instead of polling (aiogram
-   supports this via `aiogram.webhook`), running the actual Python
-   process on a normal host (Railway, a VPS, Docker, etc. — anywhere
-   that can keep a process alive), exposing an HTTP endpoint like
-   `/webhook/<secret>`.
-2. Optionally put a **Cloudflare Worker in front of that endpoint** as a
-   lightweight reverse proxy / edge cache / rate-limiter, forwarding
-   Telegram's webhook POSTs to your real backend with `fetch()`.
-3. Register the webhook with Telegram:
-   `https://api.telegram.org/bot<token>/setWebhook?url=<your-worker-or-backend-url>`
-
-This project ships configured for **long polling** (simplest, no public
-URL needed) via Docker/Railway. Treat "Cloudflare Workers" as an edge
-proxy in front of a webhook deployment, not as the Python runtime itself
-— running the actual bot process there isn't something this bot (or
-Python in general) supports today.
+- **Workers Free plan**: 100,000 requests/day, 10ms CPU time per request —
+  a personal or small-team bot will not come close to these limits.
+- **Workers KV Free plan**: 100,000 reads/day, 1,000 writes/day, 1GB storage
+  — plenty for storing per-user favorites/history.
+- No credit card is required to stay on the free tier for this workload.
+- If you exceed free-tier limits (very unlikely for personal use), Cloudflare
+  will notify you before any charges — it does not silently bill you.
 
 ---
 
-## Extending the Database
+## Extending the database
 
-`database/generate_db.py` is the source of truth — it's a Python script
-that builds `commands.json` from a curated, hand-verified list so the
-schema stays consistent as you scale toward thousands of commands. To
-add a command:
+`database/commands.json` is a flat array of command objects. To add more
+commands:
 
-1. Add a new `COMMANDS.append(rec(...))` block following the existing
-   pattern (id, title, category, aliases, per-platform command, syntax,
-   example, sample output, notes, etc).
-2. Run `python database/generate_db.py`.
-3. Restart the bot — the database is loaded once into memory at startup.
+1. Add new entries following the existing schema (see any entry for the
+   shape: `id`, `title`, `category`, `aliases`, `description`, `ios`,
+   `ios_xe`, `ios_xr`, `nx_os`, `syntax`, `example`, `sample_output`,
+   `notes`, `privilege_level`, `configuration_mode`, `related_commands`,
+   `references`).
+2. Regenerate `database/aliases.json` (a flat alias→id index used for fast
+   exact-match lookup) — or just add your aliases directly to both files.
+3. Redeploy with `npm run deploy`.
 
-For platforms where a command doesn't apply, use the `NA` sentinel
-(`"Not supported on this platform"`) already defined in the script —
-the bot detects this and displays "not supported" instead of a blank
-or fabricated command.
+The database is bundled directly into the Worker at build time and loaded
+once per isolate — no external database calls are needed for search, which
+keeps responses fast.
+
+To scale to thousands of commands without bloating a single JSON file, you
+can later split `commands.json` by category and lazy-load with dynamic
+`import()`, or move the catalog into Cloudflare D1 (SQL) or KV.
 
 ---
 
-## Roadmap / Future Features
+## Bot Commands Reference
 
-- Bookmarks sync across devices (currently per-Telegram-account, already supported)
+| Command             | Description |
+|----------------------|-------------|
+| `/start`               | Welcome message + main menu |
+| `/help`                 | List all commands |
+| `/search <query>`         | Search for a command |
+| `/category`                 | Browse by technology category |
+| `/platform`                   | Filter commands by Cisco OS |
+| `/random`                       | Get a random command |
+| `/favorite`                       | View saved commands |
+| `/history`                          | View recently viewed commands |
+| `/explain <query>`                    | Full detailed explanation |
+| `/convert <query>`                      | Cross-platform equivalents |
+| `/example <query>`                        | Example + sample output |
+| `/about`                                    | About this bot |
+
+You can also just type naturally in English or Persian — no `/` needed.
+
+---
+
+## Roadmap (not yet implemented)
+
+- Bookmark sync across devices
 - Inline mode (`@YourBot show arp` from any chat)
 - Group chat support with reduced verbosity
 - Voice query transcription
-- Auto-generated topology diagrams
-- Cisco configuration generator & validator
-- Guided troubleshooting assistant flows
+- Topology diagram generation
+- Cisco configuration generator / validator
+- Interactive troubleshooting assistant
 
 ---
 
-## License
+## Notes on the AI fallback layer
 
-MIT — do whatever you like, no warranty.
+The AI layer is **opt-in** (only active if `AI_API_KEY` is set) and is
+architecturally constrained: it receives your entire command catalog and is
+instructed to respond with only an existing catalog id or `NONE`. The
+Worker discards any id that isn't actually in the catalog before using it.
+This means the AI layer can help with *intent recognition* (understanding
+what you meant) but can never fabricate a Cisco command that isn't already
+verified in your database.

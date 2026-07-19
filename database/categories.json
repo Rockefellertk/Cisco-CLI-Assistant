@@ -1,52 +1,242 @@
-{
-  "categories": [
-    "Interfaces",
-    "Routing",
-    "BGP",
-    "OSPF",
-    "ISIS",
-    "MPLS",
-    "LDP",
-    "RSVP",
-    "Segment Routing",
-    "EVPN",
-    "VXLAN",
-    "QoS",
-    "ACL",
-    "NAT",
-    "VRF",
-    "AAA",
-    "Radius",
-    "Tacacs",
-    "HSRP",
-    "VRRP",
-    "GLBP",
-    "PIM",
-    "IGMP",
-    "SNMP",
-    "NetFlow",
-    "Telemetry",
-    "Logging",
-    "Debug",
-    "Security",
-    "L2 Switching",
-    "STP",
-    "RSTP",
-    "MST",
-    "VLAN",
-    "EtherChannel",
-    "LACP",
-    "UDLD",
-    "CDP",
-    "LLDP",
-    "IPv4",
-    "IPv6",
-    "DHCP",
-    "DNS",
-    "NTP",
-    "Syslog",
-    "IP SLA",
-    "Policy Based Routing",
-    "Multicast"
-  ]
-}
+[
+  {
+    "name": "Interfaces",
+    "name_fa": "اینترفیس‌ها",
+    "count": 7
+  },
+  {
+    "name": "Routing",
+    "name_fa": "روتینگ",
+    "count": 4
+  },
+  {
+    "name": "BGP",
+    "name_fa": "بی‌جی‌پی",
+    "count": 6
+  },
+  {
+    "name": "OSPF",
+    "name_fa": "اسپف",
+    "count": 6
+  },
+  {
+    "name": "ISIS",
+    "name_fa": "آی‌اس‌آی‌اس",
+    "count": 2
+  },
+  {
+    "name": "MPLS",
+    "name_fa": "ام‌پی‌ال‌اس",
+    "count": 2
+  },
+  {
+    "name": "LDP",
+    "name_fa": "ال‌دی‌پی",
+    "count": 2
+  },
+  {
+    "name": "RSVP",
+    "name_fa": "آر‌اس‌وی‌پی",
+    "count": 2
+  },
+  {
+    "name": "Segment Routing",
+    "name_fa": "سگمنت روتینگ",
+    "count": 3
+  },
+  {
+    "name": "EVPN",
+    "name_fa": "ای‌وی‌پی‌ان",
+    "count": 3
+  },
+  {
+    "name": "VXLAN",
+    "name_fa": "وی‌ایکس‌لن",
+    "count": 3
+  },
+  {
+    "name": "QoS",
+    "name_fa": "کیفیت سرویس",
+    "count": 4
+  },
+  {
+    "name": "ACL",
+    "name_fa": "لیست دسترسی",
+    "count": 3
+  },
+  {
+    "name": "NAT",
+    "name_fa": "نت",
+    "count": 2
+  },
+  {
+    "name": "VRF",
+    "name_fa": "وی‌آر‌اف",
+    "count": 3
+  },
+  {
+    "name": "AAA",
+    "name_fa": "ای‌ای‌ای",
+    "count": 2
+  },
+  {
+    "name": "Radius",
+    "name_fa": "رادیوس",
+    "count": 2
+  },
+  {
+    "name": "Tacacs",
+    "name_fa": "تاکاکس",
+    "count": 2
+  },
+  {
+    "name": "HSRP",
+    "name_fa": "اچ‌اس‌آر‌پی",
+    "count": 2
+  },
+  {
+    "name": "VRRP",
+    "name_fa": "وی‌آر‌آر‌پی",
+    "count": 2
+  },
+  {
+    "name": "GLBP",
+    "name_fa": "جی‌ال‌بی‌پی",
+    "count": 1
+  },
+  {
+    "name": "PIM",
+    "name_fa": "پیم",
+    "count": 2
+  },
+  {
+    "name": "IGMP",
+    "name_fa": "آی‌جی‌ام‌پی",
+    "count": 1
+  },
+  {
+    "name": "SNMP",
+    "name_fa": "اس‌ان‌ام‌پی",
+    "count": 2
+  },
+  {
+    "name": "NetFlow",
+    "name_fa": "نت‌فلو",
+    "count": 2
+  },
+  {
+    "name": "Telemetry",
+    "name_fa": "تله‌متری",
+    "count": 1
+  },
+  {
+    "name": "Logging",
+    "name_fa": "لاگینگ",
+    "count": 2
+  },
+  {
+    "name": "Debug",
+    "name_fa": "دیباگ",
+    "count": 2
+  },
+  {
+    "name": "Security",
+    "name_fa": "امنیت",
+    "count": 10
+  },
+  {
+    "name": "L2 Switching",
+    "name_fa": "سوییچینگ لایه ۲",
+    "count": 1
+  },
+  {
+    "name": "STP",
+    "name_fa": "اس‌تی‌پی",
+    "count": 2
+  },
+  {
+    "name": "RSTP",
+    "name_fa": "آر‌اس‌تی‌پی",
+    "count": 1
+  },
+  {
+    "name": "MST",
+    "name_fa": "ام‌اس‌تی",
+    "count": 1
+  },
+  {
+    "name": "VLAN",
+    "name_fa": "وی‌لن",
+    "count": 3
+  },
+  {
+    "name": "EtherChannel",
+    "name_fa": "اترچنل",
+    "count": 2
+  },
+  {
+    "name": "LACP",
+    "name_fa": "لک‌پی",
+    "count": 1
+  },
+  {
+    "name": "UDLD",
+    "name_fa": "یو‌دی‌ال‌دی",
+    "count": 1
+  },
+  {
+    "name": "CDP",
+    "name_fa": "سی‌دی‌پی",
+    "count": 1
+  },
+  {
+    "name": "LLDP",
+    "name_fa": "ال‌ال‌دی‌پی",
+    "count": 1
+  },
+  {
+    "name": "IPv4",
+    "name_fa": "آی‌پی نسخه ۴",
+    "count": 4
+  },
+  {
+    "name": "IPv6",
+    "name_fa": "آی‌پی نسخه ۶",
+    "count": 2
+  },
+  {
+    "name": "DHCP",
+    "name_fa": "دی‌اچ‌سی‌پی",
+    "count": 2
+  },
+  {
+    "name": "DNS",
+    "name_fa": "دی‌ان‌اس",
+    "count": 1
+  },
+  {
+    "name": "NTP",
+    "name_fa": "ان‌تی‌پی",
+    "count": 2
+  },
+  {
+    "name": "Syslog",
+    "name_fa": "سیس‌لاگ",
+    "count": 1
+  },
+  {
+    "name": "IP SLA",
+    "name_fa": "آی‌پی اسلا",
+    "count": 2
+  },
+  {
+    "name": "Policy Based Routing",
+    "name_fa": "روتینگ مبتنی بر پالیسی",
+    "count": 2
+  },
+  {
+    "name": "Multicast",
+    "name_fa": "مولتی‌کست",
+    "count": 2
+  }
+]

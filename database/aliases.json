@@ -1,1000 +1,1160 @@
 {
-  "aliases": {
-    "arp": [
-      "arp_table"
-    ],
-    "arp table": [
-      "arp_table"
-    ],
-    "ip arp": [
-      "arp_table"
-    ],
-    "show arp": [
-      "arp_table"
-    ],
-    "show arp table": [
-      "arp_table"
-    ],
-    "جدول arp": [
-      "arp_table"
-    ],
-    "میخوام arp بگیرم": [
-      "arp_table"
-    ],
-    "نمایش arp": [
-      "arp_table"
-    ],
-    "چطور arp رو ببینم": [
-      "arp_table"
-    ],
-    "interface status": [
-      "ip_int_brief"
-    ],
-    "interface summary": [
-      "ip_int_brief"
-    ],
-    "sh ip int br": [
-      "ip_int_brief"
-    ],
-    "show ip int brief": [
-      "ip_int_brief"
-    ],
-    "نمایش اینترفیس": [
-      "ip_int_brief"
-    ],
-    "وضعیت اینترفیس ها": [
-      "ip_int_brief"
-    ],
-    "interface counters": [
-      "show_interfaces"
-    ],
-    "interface detail": [
-      "show_interfaces"
-    ],
-    "sh int": [
-      "show_interfaces"
-    ],
-    "show interfaces": [
-      "show_interfaces"
-    ],
-    "جزئیات اینترفیس": [
-      "show_interfaces"
-    ],
-    "نمایش پورت": [
-      "show_interfaces"
-    ],
-    "int status": [
-      "int_status"
-    ],
-    "port status": [
-      "int_status"
-    ],
-    "sh int status": [
-      "int_status"
-    ],
-    "show interfaces status": [
-      "int_status"
-    ],
-    "clear arp": [
-      "clear_arp"
-    ],
-    "clear arp cache": [
-      "clear_arp"
-    ],
-    "ریست arp": [
-      "clear_arp"
-    ],
-    "پاک کردن arp": [
-      "clear_arp"
-    ],
-    "ipv6 int brief": [
-      "show_ipv6_int_brief"
-    ],
-    "ipv6 status": [
-      "show_ipv6_int_brief"
-    ],
-    "show ipv6 interface brief": [
-      "show_ipv6_int_brief"
-    ],
-    "نمایش ipv6": [
-      "show_ipv6_int_brief"
-    ],
-    "وضعیت ipv6": [
-      "show_ipv6_int_brief"
-    ],
-    "ipv6 arp": [
-      "show_ipv6_neighbors"
-    ],
-    "ipv6 neighbor table": [
-      "show_ipv6_neighbors"
-    ],
-    "show ipv6 neighbors": [
-      "show_ipv6_neighbors"
-    ],
-    "نمایش neighbor ipv6": [
-      "show_ipv6_neighbors"
-    ],
-    "ipv6 routing table": [
-      "show_ipv6_route"
-    ],
-    "show ipv6 route": [
-      "show_ipv6_route"
-    ],
-    "مسیریابی ipv6": [
-      "show_ipv6_route"
-    ],
-    "routing table": [
-      "show_ip_route"
-    ],
-    "sh ip route": [
-      "show_ip_route"
-    ],
-    "show ip route": [
-      "show_ip_route"
-    ],
-    "روت تیبل": [
-      "show_ip_route"
-    ],
-    "نمایش جدول مسیریابی": [
-      "show_ip_route"
-    ],
-    "route count": [
-      "show_ip_route_summary"
-    ],
-    "show ip route summary": [
-      "show_ip_route_summary"
-    ],
-    "خلاصه جدول مسیریابی": [
-      "show_ip_route_summary"
-    ],
-    "active routing protocols": [
-      "show_ip_protocols"
-    ],
-    "show ip protocols": [
-      "show_ip_protocols"
-    ],
-    "پروتکل های روتینگ فعال": [
-      "show_ip_protocols"
-    ],
-    "cef table": [
-      "ip_cef"
-    ],
-    "cisco express forwarding": [
-      "ip_cef"
-    ],
-    "show ip cef": [
-      "ip_cef"
-    ],
-    "ip route config": [
-      "static_route_config"
-    ],
-    "static route": [
-      "static_route_config"
-    ],
-    "افزودن static route": [
-      "static_route_config"
-    ],
-    "کانفیگ static route": [
-      "static_route_config"
-    ],
-    "bgp neighbor": [
-      "bgp_summary"
-    ],
-    "bgp neighbors summary": [
-      "bgp_summary"
-    ],
-    "bgp summary": [
-      "bgp_summary"
-    ],
-    "show ip bgp summary": [
-      "bgp_summary"
-    ],
-    "خلاصه bgp": [
-      "bgp_summary"
-    ],
-    "چطور bgp neighbor رو ببینم": [
-      "bgp_summary"
-    ],
-    "bgp neighbor detail": [
-      "bgp_neighbors"
-    ],
-    "show ip bgp neighbors": [
-      "bgp_neighbors"
-    ],
-    "جزئیات bgp neighbor": [
-      "bgp_neighbors"
-    ],
-    "bgp table": [
-      "bgp_table"
-    ],
-    "show ip bgp": [
-      "bgp_table"
-    ],
-    "جدول bgp": [
-      "bgp_table"
-    ],
-    "add bgp peer": [
-      "bgp_config_neighbor"
-    ],
-    "bgp neighbor config": [
-      "bgp_config_neighbor"
-    ],
-    "افزودن پیر bgp": [
-      "bgp_config_neighbor"
-    ],
-    "کانفیگ bgp neighbor": [
-      "bgp_config_neighbor"
-    ],
-    "bgp route-map": [
-      "bgp_route_map"
-    ],
-    "route-map bgp": [
-      "bgp_route_map"
-    ],
-    "فیلتر bgp با route-map": [
-      "bgp_route_map"
-    ],
-    "bgp soft reset": [
-      "bgp_clear_soft"
-    ],
-    "clear bgp": [
-      "bgp_clear_soft"
-    ],
-    "reset bgp neighbor": [
-      "bgp_clear_soft"
-    ],
-    "ریست bgp": [
-      "bgp_clear_soft"
-    ],
-    "ospf neighbor": [
-      "ospf_neighbor"
-    ],
-    "ospf neighbors": [
-      "ospf_neighbor"
-    ],
-    "show ip ospf neighbor": [
-      "ospf_neighbor"
-    ],
-    "همسایه های ospf": [
-      "ospf_neighbor"
-    ],
-    "چگونه ospf neighbor را ببینم": [
-      "ospf_neighbor"
-    ],
-    "ospf database": [
-      "ospf_database"
-    ],
-    "ospf lsdb": [
-      "ospf_database"
-    ],
-    "show ip ospf database": [
-      "ospf_database"
-    ],
-    "دیتابیس ospf": [
-      "ospf_database"
-    ],
-    "ospf interface": [
-      "ospf_interface"
-    ],
-    "show ip ospf interface": [
-      "ospf_interface"
-    ],
-    "اینترفیس ospf": [
-      "ospf_interface"
-    ],
-    "enable ospf": [
-      "ospf_config"
-    ],
-    "ospf config": [
-      "ospf_config"
-    ],
-    "فعال کردن ospf": [
-      "ospf_config"
-    ],
-    "کانفیگ ospf": [
-      "ospf_config"
-    ],
-    "isis neighbor": [
-      "isis_neighbor"
-    ],
-    "show isis neighbors": [
-      "isis_neighbor"
-    ],
-    "همسایه های isis": [
-      "isis_neighbor"
-    ],
-    "isis lsdb": [
-      "isis_database"
-    ],
-    "show isis database": [
-      "isis_database"
-    ],
-    "دیتابیس isis": [
-      "isis_database"
-    ],
-    "mpls interface": [
-      "mpls_interfaces"
-    ],
-    "show mpls interfaces": [
-      "mpls_interfaces"
-    ],
-    "اینترفیس های mpls": [
-      "mpls_interfaces"
-    ],
-    "mpls lfib": [
-      "mpls_forwarding"
-    ],
-    "show mpls forwarding-table": [
-      "mpls_forwarding"
-    ],
-    "جدول forwarding mpls": [
-      "mpls_forwarding"
-    ],
-    "ldp neighbor": [
-      "ldp_neighbor"
-    ],
-    "show mpls ldp neighbor": [
-      "ldp_neighbor"
-    ],
-    "همسایه های ldp": [
-      "ldp_neighbor"
-    ],
-    "ldp label bindings": [
-      "ldp_bindings"
-    ],
-    "show mpls ldp bindings": [
-      "ldp_bindings"
-    ],
-    "بایندینگ ldp": [
-      "ldp_bindings"
-    ],
-    "rsvp neighbor": [
-      "rsvp_neighbor"
-    ],
-    "show ip rsvp neighbor": [
-      "rsvp_neighbor"
-    ],
-    "همسایه rsvp": [
-      "rsvp_neighbor"
-    ],
-    "show mpls traffic-eng tunnels": [
-      "rsvp_tunnels"
-    ],
-    "te tunnels": [
-      "rsvp_tunnels"
-    ],
-    "تانل های te": [
-      "rsvp_tunnels"
-    ],
-    "segment routing isis": [
-      "segment_routing_isis"
-    ],
-    "show isis segment-routing": [
-      "segment_routing_isis"
-    ],
-    "sr isis": [
-      "segment_routing_isis"
-    ],
-    "show segment-routing traffic-eng policy": [
-      "sr_te_policy"
-    ],
-    "sr-te policy": [
-      "sr_te_policy"
-    ],
-    "پالیسی srte": [
-      "sr_te_policy"
-    ],
-    "evpn summary": [
-      "evpn_summary"
-    ],
-    "show bgp l2vpn evpn summary": [
-      "evpn_summary"
-    ],
-    "خلاصه evpn": [
-      "evpn_summary"
-    ],
-    "evpn mac table": [
-      "evpn_mac_ip"
-    ],
-    "show l2route evpn mac-ip": [
-      "evpn_mac_ip"
-    ],
-    "جدول mac evpn": [
-      "evpn_mac_ip"
-    ],
-    "show nve vni": [
-      "vxlan_vni"
-    ],
-    "vni های vxlan": [
-      "vxlan_vni"
-    ],
-    "vxlan vni": [
-      "vxlan_vni"
-    ],
-    "show nve peers": [
-      "vxlan_peers"
-    ],
-    "vxlan peers": [
-      "vxlan_peers"
-    ],
-    "پیرهای vxlan": [
-      "vxlan_peers"
-    ],
-    "qos policy": [
-      "qos_policy_map"
-    ],
-    "show policy-map": [
-      "qos_policy_map"
-    ],
-    "پالیسی qos": [
-      "qos_policy_map"
-    ],
-    "qos class": [
-      "qos_class_map"
-    ],
-    "show class-map": [
-      "qos_class_map"
-    ],
-    "کلاس qos": [
-      "qos_class_map"
-    ],
-    "acl لیست": [
-      "show_access_lists"
-    ],
-    "show access-lists": [
-      "show_access_lists"
-    ],
-    "show ip access-list": [
-      "show_access_lists"
-    ],
-    "نمایش acl": [
-      "show_access_lists"
-    ],
-    "extended access-list config": [
-      "acl_config"
-    ],
-    "ساخت acl": [
-      "acl_config"
-    ],
-    "کانفیگ acl": [
-      "acl_config"
-    ],
-    "nat table": [
-      "nat_translations"
-    ],
-    "show ip nat translations": [
-      "nat_translations"
-    ],
-    "جدول nat": [
-      "nat_translations"
-    ],
-    "nat stats": [
-      "nat_statistics"
-    ],
-    "show ip nat statistics": [
-      "nat_statistics"
-    ],
-    "آمار nat": [
-      "nat_statistics"
-    ],
-    "show vrf": [
-      "show_vrf"
-    ],
-    "vrf list": [
-      "show_vrf"
-    ],
-    "لیست vrf": [
-      "show_vrf"
-    ],
-    "vrf definition": [
-      "vrf_config"
-    ],
-    "ساخت vrf": [
-      "vrf_config"
-    ],
-    "کانفیگ vrf": [
-      "vrf_config"
-    ],
-    "aaa new-model": [
-      "aaa_config"
-    ],
-    "فعال کردن aaa": [
-      "aaa_config"
-    ],
-    "کانفیگ aaa": [
-      "aaa_config"
-    ],
-    "radius server config": [
-      "radius_server"
-    ],
-    "افزودن radius": [
-      "radius_server"
-    ],
-    "کانفیگ radius": [
-      "radius_server"
-    ],
-    "tacacs server config": [
-      "tacacs_server"
-    ],
-    "افزودن tacacs": [
-      "tacacs_server"
-    ],
-    "کانفیگ tacacs": [
-      "tacacs_server"
-    ],
-    "hsrp status": [
-      "hsrp_status"
-    ],
-    "show standby": [
-      "hsrp_status"
-    ],
-    "وضعیت hsrp": [
-      "hsrp_status"
-    ],
-    "show vrrp": [
-      "vrrp_status"
-    ],
-    "vrrp status": [
-      "vrrp_status"
-    ],
-    "وضعیت vrrp": [
-      "vrrp_status"
-    ],
-    "glbp status": [
-      "glbp_status"
-    ],
-    "show glbp": [
-      "glbp_status"
-    ],
-    "وضعیت glbp": [
-      "glbp_status"
-    ],
-    "pim neighbor": [
-      "pim_neighbor"
-    ],
-    "show ip pim neighbor": [
-      "pim_neighbor"
-    ],
-    "همسایه pim": [
-      "pim_neighbor"
-    ],
-    "mroute table": [
-      "pim_mroute"
-    ],
-    "show ip mroute": [
-      "pim_mroute"
-    ],
-    "جدول multicast": [
-      "pim_mroute"
-    ],
-    "igmp groups": [
-      "igmp_groups"
-    ],
-    "show ip igmp groups": [
-      "igmp_groups"
-    ],
-    "گروه های igmp": [
-      "igmp_groups"
-    ],
-    "snmp-server community": [
-      "snmp_config"
-    ],
-    "افزودن community snmp": [
-      "snmp_config"
-    ],
-    "کانفیگ snmp": [
-      "snmp_config"
-    ],
-    "show snmp": [
-      "snmp_status"
-    ],
-    "snmp status": [
-      "snmp_status"
-    ],
-    "وضعیت snmp": [
-      "snmp_status"
-    ],
-    "ip flow-export": [
-      "netflow_config"
-    ],
-    "netflow config": [
-      "netflow_config"
-    ],
-    "کانفیگ netflow": [
-      "netflow_config"
-    ],
-    "netflow stats": [
-      "netflow_show"
-    ],
-    "show flow monitor": [
-      "netflow_show"
-    ],
-    "آمار netflow": [
-      "netflow_show"
-    ],
-    "streaming telemetry": [
-      "telemetry_config"
-    ],
-    "telemetry model-driven": [
-      "telemetry_config"
-    ],
-    "کانفیگ تلمتری": [
-      "telemetry_config"
-    ],
-    "logging host": [
-      "logging_config"
-    ],
-    "syslog config": [
-      "logging_config"
-    ],
-    "کانفیگ syslog": [
-      "logging_config"
-    ],
-    "log buffer": [
-      "show_logging"
-    ],
-    "show logging": [
-      "show_logging"
-    ],
-    "بافر لاگ": [
-      "show_logging"
-    ],
-    "debug ip packet": [
-      "debug_ip_packet"
-    ],
-    "دیباگ ip": [
-      "debug_ip_packet"
-    ],
-    "دیباگ پکت": [
-      "debug_ip_packet"
-    ],
-    "debug bgp events": [
-      "debug_bgp_events"
-    ],
-    "debug ip bgp": [
-      "debug_bgp_events"
-    ],
-    "دیباگ bgp": [
-      "debug_bgp_events"
-    ],
-    "switchport port-security": [
-      "port_security"
-    ],
-    "امنیت پورت": [
-      "port_security"
-    ],
-    "کانفیگ port security": [
-      "port_security"
-    ],
-    "ip dhcp snooping": [
-      "dhcp_snooping"
-    ],
-    "دی اچ سی پی اسنوپینگ": [
-      "dhcp_snooping"
-    ],
-    "کانفیگ dhcp snooping": [
-      "dhcp_snooping"
-    ],
-    "cpu usage": [
-      "cpu_utilization"
-    ],
-    "show processes cpu": [
-      "cpu_utilization"
-    ],
-    "مصرف cpu": [
-      "cpu_utilization"
-    ],
-    "memory usage": [
-      "memory_utilization"
-    ],
-    "show processes memory": [
-      "memory_utilization"
-    ],
-    "مصرف حافظه": [
-      "memory_utilization"
-    ],
-    "mac table": [
-      "show_mac_address_table"
-    ],
-    "show mac address-table": [
-      "show_mac_address_table"
-    ],
-    "جدول مک": [
-      "show_mac_address_table"
-    ],
-    "نمایش جدول مک": [
-      "show_mac_address_table"
-    ],
-    "show vlan brief": [
-      "show_vlan_brief"
-    ],
-    "vlan list": [
-      "show_vlan_brief"
-    ],
-    "لیست vlan": [
-      "show_vlan_brief"
-    ],
-    "vlan database config": [
-      "vlan_config"
-    ],
-    "ساخت vlan": [
-      "vlan_config"
-    ],
-    "کانفیگ vlan": [
-      "vlan_config"
-    ],
-    "show spanning-tree": [
-      "stp_status"
-    ],
-    "stp status": [
-      "stp_status"
-    ],
-    "وضعیت stp": [
-      "stp_status"
-    ],
-    "spanning-tree mode rapid-pvst": [
-      "rstp_config"
-    ],
-    "فعال کردن rstp": [
-      "rstp_config"
-    ],
-    "spanning-tree mst configuration": [
-      "mst_config"
-    ],
-    "کانفیگ mst": [
-      "mst_config"
-    ],
-    "port-channel summary": [
-      "etherchannel_summary"
-    ],
-    "show etherchannel summary": [
-      "etherchannel_summary"
-    ],
-    "خلاصه port channel": [
-      "etherchannel_summary"
-    ],
-    "port-channel config lacp": [
-      "etherchannel_config"
-    ],
-    "ساخت port channel": [
-      "etherchannel_config"
-    ],
-    "کانفیگ port channel": [
-      "etherchannel_config"
-    ],
-    "lacp neighbor": [
-      "lacp_neighbor"
-    ],
-    "show lacp neighbor": [
-      "lacp_neighbor"
-    ],
-    "همسایه lacp": [
-      "lacp_neighbor"
-    ],
-    "show udld": [
-      "udld_status"
-    ],
-    "udld status": [
-      "udld_status"
-    ],
-    "وضعیت udld": [
-      "udld_status"
-    ],
-    "cdp neighbor": [
-      "cdp_neighbor"
-    ],
-    "show cdp neighbors": [
-      "cdp_neighbor"
-    ],
-    "همسایه cdp": [
-      "cdp_neighbor"
-    ],
-    "lldp neighbor": [
-      "lldp_neighbor"
-    ],
-    "show lldp neighbors": [
-      "lldp_neighbor"
-    ],
-    "همسایه lldp": [
-      "lldp_neighbor"
-    ],
-    "dhcp binding": [
-      "dhcp_show_binding"
-    ],
-    "show ip dhcp binding": [
-      "dhcp_show_binding"
-    ],
-    "بایندینگ dhcp": [
-      "dhcp_show_binding"
-    ],
-    "ip dhcp pool": [
-      "dhcp_pool_config"
-    ],
-    "ساخت dhcp pool": [
-      "dhcp_pool_config"
-    ],
-    "کانفیگ dhcp pool": [
-      "dhcp_pool_config"
-    ],
-    "ip name-server": [
-      "dns_config"
-    ],
-    "افزودن dns سرور": [
-      "dns_config"
-    ],
-    "کانفیگ dns": [
-      "dns_config"
-    ],
-    "dns cache": [
-      "show_hosts"
-    ],
-    "show hosts": [
-      "show_hosts"
-    ],
-    "کش dns": [
-      "show_hosts"
-    ],
-    "ntp server": [
-      "ntp_config"
-    ],
-    "افزودن ntp سرور": [
-      "ntp_config"
-    ],
-    "کانفیگ ntp": [
-      "ntp_config"
-    ],
-    "ntp status": [
-      "ntp_status"
-    ],
-    "show ntp status": [
-      "ntp_status"
-    ],
-    "وضعیت ntp": [
-      "ntp_status"
-    ],
-    "ip sla monitor": [
-      "ip_sla_config"
-    ],
-    "تست ping دوره ای": [
-      "ip_sla_config"
-    ],
-    "کانفیگ ip sla": [
-      "ip_sla_config"
-    ],
-    "show ip sla statistics": [
-      "ip_sla_show"
-    ],
-    "sla stats": [
-      "ip_sla_show"
-    ],
-    "آمار sla": [
-      "ip_sla_show"
-    ],
-    "route-map pbr": [
-      "pbr_config"
-    ],
-    "مسیریابی مبتنی بر پالیسی": [
-      "pbr_config"
-    ],
-    "کانفیگ pbr": [
-      "pbr_config"
-    ],
-    "pbr status": [
-      "show_ip_policy"
-    ],
-    "show ip policy": [
-      "show_ip_policy"
-    ],
-    "وضعیت pbr": [
-      "show_ip_policy"
-    ],
-    "rp mapping": [
-      "pim_rp_mapping"
-    ],
-    "show ip pim rp mapping": [
-      "pim_rp_mapping"
-    ],
-    "نگاشت rp": [
-      "pim_rp_mapping"
-    ],
-    "igmp snooping": [
-      "igmp_snooping"
-    ],
-    "show ip igmp snooping": [
-      "igmp_snooping"
-    ],
-    "اسنوپینگ igmp": [
-      "igmp_snooping"
-    ],
-    "sh ver": [
-      "show_version"
-    ],
-    "show version": [
-      "show_version"
-    ],
-    "مشخصات دستگاه": [
-      "show_version"
-    ],
-    "ورژن دستگاه": [
-      "show_version"
-    ],
-    "sh run": [
-      "show_running_config"
-    ],
-    "show running-config": [
-      "show_running_config"
-    ],
-    "نمایش running config": [
-      "show_running_config"
-    ],
-    "کانفیگ فعلی": [
-      "show_running_config"
-    ],
-    "copy running-config startup-config": [
-      "save_config"
-    ],
-    "write memory": [
-      "save_config"
-    ],
-    "ذخیره کانفیگ": [
-      "save_config"
-    ],
-    "سیو کردن کانفیگ": [
-      "save_config"
-    ],
-    "reload": [
-      "reload_device"
-    ],
-    "ریست دستگاه": [
-      "reload_device"
-    ],
-    "ریلود کردن روتر": [
-      "reload_device"
-    ],
-    "ping": [
-      "ping_cmd"
-    ],
-    "تست پینگ": [
-      "ping_cmd"
-    ],
-    "پینگ": [
-      "ping_cmd"
-    ],
-    "traceroute": [
-      "traceroute_cmd"
-    ],
-    "tracert": [
-      "traceroute_cmd"
-    ],
-    "ترسیم مسیر": [
-      "traceroute_cmd"
-    ],
-    "تریس روت": [
-      "traceroute_cmd"
-    ],
-    "show processes": [
-      "show_processes"
-    ],
-    "لیست پروسس ها": [
-      "show_processes"
-    ],
-    "show inventory": [
-      "show_inventory"
-    ],
-    "اجزای سخت افزاری": [
-      "show_inventory"
-    ],
-    "اینونتوری": [
-      "show_inventory"
-    ],
-    "show environment": [
-      "show_env"
-    ],
-    "دما و پاور دستگاه": [
-      "show_env"
-    ],
-    "وضعیت فن و برق": [
-      "show_env"
-    ]
-  }
+  "show interface status": [
+    "cmd_0001"
+  ],
+  "show interfaces": [
+    "cmd_0001"
+  ],
+  "int status": [
+    "cmd_0001"
+  ],
+  "show int": [
+    "cmd_0001"
+  ],
+  "وضعیت اینترفیس": [
+    "cmd_0001"
+  ],
+  "نمایش اینترفیس ها": [
+    "cmd_0001"
+  ],
+  "show interface brief": [
+    "cmd_0002"
+  ],
+  "show ip int brief": [
+    "cmd_0002"
+  ],
+  "int brief": [
+    "cmd_0002"
+  ],
+  "خلاصه اینترفیس": [
+    "cmd_0002"
+  ],
+  "configure interface description": [
+    "cmd_0003"
+  ],
+  "set interface description": [
+    "cmd_0003"
+  ],
+  "توضیح اینترفیس": [
+    "cmd_0003"
+  ],
+  "shutdown / no shutdown interface": [
+    "cmd_0004"
+  ],
+  "disable interface": [
+    "cmd_0004"
+  ],
+  "enable interface": [
+    "cmd_0004"
+  ],
+  "خاموش کردن پورت": [
+    "cmd_0004"
+  ],
+  "روشن کردن پورت": [
+    "cmd_0004"
+  ],
+  "show interface counters": [
+    "cmd_0005"
+  ],
+  "interface errors": [
+    "cmd_0005"
+  ],
+  "show counters": [
+    "cmd_0005"
+  ],
+  "خطاهای اینترفیس": [
+    "cmd_0005"
+  ],
+  "show ip route table": [
+    "cmd_0006"
+  ],
+  "show route": [
+    "cmd_0006"
+  ],
+  "routing table": [
+    "cmd_0006"
+  ],
+  "جدول روتینگ": [
+    "cmd_0006"
+  ],
+  "نمایش مسیرها": [
+    "cmd_0006"
+  ],
+  "show ipv6 route table": [
+    "cmd_0007"
+  ],
+  "show ipv6 route": [
+    "cmd_0007"
+  ],
+  "جدول روتینگ ipv6": [
+    "cmd_0007"
+  ],
+  "configure static route": [
+    "cmd_0008"
+  ],
+  "ip route": [
+    "cmd_0008"
+  ],
+  "static route": [
+    "cmd_0008"
+  ],
+  "مسیر استاتیک": [
+    "cmd_0008"
+  ],
+  "show bgp summary": [
+    "cmd_0009"
+  ],
+  "bgp summary": [
+    "cmd_0009"
+  ],
+  "show ip bgp summary": [
+    "cmd_0009"
+  ],
+  "خلاصه بی جی پی": [
+    "cmd_0009"
+  ],
+  "وضعیت همسایگی bgp": [
+    "cmd_0009"
+  ],
+  "show bgp neighbors": [
+    "cmd_0010"
+  ],
+  "bgp neighbors": [
+    "cmd_0010"
+  ],
+  "show bgp neighbor": [
+    "cmd_0010"
+  ],
+  "همسایگان bgp": [
+    "cmd_0010"
+  ],
+  "show bgp table": [
+    "cmd_0011"
+  ],
+  "show ip bgp": [
+    "cmd_0011"
+  ],
+  "bgp table": [
+    "cmd_0011"
+  ],
+  "جدول bgp": [
+    "cmd_0011"
+  ],
+  "configure bgp neighbor": [
+    "cmd_0012"
+  ],
+  "bgp neighbor config": [
+    "cmd_0012"
+  ],
+  "افزودن همسایه bgp": [
+    "cmd_0012"
+  ],
+  "clear bgp session": [
+    "cmd_0013"
+  ],
+  "clear ip bgp": [
+    "cmd_0013"
+  ],
+  "reset bgp": [
+    "cmd_0013"
+  ],
+  "ریست bgp": [
+    "cmd_0013"
+  ],
+  "show ospf neighbors": [
+    "cmd_0014"
+  ],
+  "ospf neighbors": [
+    "cmd_0014"
+  ],
+  "show ip ospf neighbor": [
+    "cmd_0014"
+  ],
+  "همسایگان ospf": [
+    "cmd_0014"
+  ],
+  "نمایش نایبر ospf": [
+    "cmd_0014"
+  ],
+  "show ospf database": [
+    "cmd_0015"
+  ],
+  "ospf lsdb": [
+    "cmd_0015"
+  ],
+  "show ip ospf database": [
+    "cmd_0015"
+  ],
+  "پایگاه داده ospf": [
+    "cmd_0015"
+  ],
+  "enable ospf on interface": [
+    "cmd_0016"
+  ],
+  "ospf network": [
+    "cmd_0016"
+  ],
+  "router ospf": [
+    "cmd_0016"
+  ],
+  "فعال کردن ospf": [
+    "cmd_0016"
+  ],
+  "show ospf interface": [
+    "cmd_0017"
+  ],
+  "show ip ospf interface": [
+    "cmd_0017"
+  ],
+  "اینترفیس ospf": [
+    "cmd_0017"
+  ],
+  "show isis neighbors": [
+    "cmd_0018"
+  ],
+  "isis neighbors": [
+    "cmd_0018"
+  ],
+  "show clns neighbors": [
+    "cmd_0018"
+  ],
+  "همسایگان isis": [
+    "cmd_0018"
+  ],
+  "show isis database": [
+    "cmd_0019",
+    "cmd_0019"
+  ],
+  "isis lsdb": [
+    "cmd_0019"
+  ],
+  "show mpls forwarding table": [
+    "cmd_0020"
+  ],
+  "mpls forwarding": [
+    "cmd_0020"
+  ],
+  "show mpls forwarding-table": [
+    "cmd_0020"
+  ],
+  "جدول mpls": [
+    "cmd_0020"
+  ],
+  "show mpls interfaces": [
+    "cmd_0021",
+    "cmd_0021"
+  ],
+  "mpls interfaces": [
+    "cmd_0021"
+  ],
+  "show ldp neighbors": [
+    "cmd_0022"
+  ],
+  "ldp neighbors": [
+    "cmd_0022"
+  ],
+  "show mpls ldp neighbor": [
+    "cmd_0022"
+  ],
+  "همسایگان ldp": [
+    "cmd_0022"
+  ],
+  "show ldp bindings": [
+    "cmd_0023"
+  ],
+  "ldp bindings": [
+    "cmd_0023"
+  ],
+  "show mpls ldp bindings": [
+    "cmd_0023"
+  ],
+  "show rsvp interfaces": [
+    "cmd_0024"
+  ],
+  "rsvp interface": [
+    "cmd_0024"
+  ],
+  "show ip rsvp interface": [
+    "cmd_0024"
+  ],
+  "show rsvp sessions": [
+    "cmd_0025"
+  ],
+  "rsvp sessions": [
+    "cmd_0025"
+  ],
+  "show ip rsvp session": [
+    "cmd_0025"
+  ],
+  "show segment routing prefix-sids": [
+    "cmd_0026"
+  ],
+  "sr prefix sid": [
+    "cmd_0026"
+  ],
+  "show segment-routing": [
+    "cmd_0026"
+  ],
+  "show is-is segment routing": [
+    "cmd_0027"
+  ],
+  "isis sr": [
+    "cmd_0027"
+  ],
+  "show isis segment-routing": [
+    "cmd_0027"
+  ],
+  "show evpn instances": [
+    "cmd_0028"
+  ],
+  "evpn instances": [
+    "cmd_0028"
+  ],
+  "show l2vpn evpn": [
+    "cmd_0028"
+  ],
+  "show evpn mac routes": [
+    "cmd_0029"
+  ],
+  "evpn mac table": [
+    "cmd_0029"
+  ],
+  "show l2vpn evpn mac": [
+    "cmd_0029"
+  ],
+  "show vxlan vtep peers": [
+    "cmd_0030"
+  ],
+  "vxlan peers": [
+    "cmd_0030"
+  ],
+  "show nve peers": [
+    "cmd_0030"
+  ],
+  "show vxlan vni": [
+    "cmd_0031"
+  ],
+  "vni table": [
+    "cmd_0031"
+  ],
+  "show nve vni": [
+    "cmd_0031"
+  ],
+  "show qos policy map": [
+    "cmd_0032"
+  ],
+  "qos policy": [
+    "cmd_0032"
+  ],
+  "show policy-map": [
+    "cmd_0032"
+  ],
+  "نمایش کیو او اس": [
+    "cmd_0032"
+  ],
+  "configure class map": [
+    "cmd_0033"
+  ],
+  "class-map config": [
+    "cmd_0033"
+  ],
+  "تعریف کلاس مپ": [
+    "cmd_0033"
+  ],
+  "show access lists": [
+    "cmd_0034"
+  ],
+  "show acl": [
+    "cmd_0034"
+  ],
+  "show access-list": [
+    "cmd_0034"
+  ],
+  "نمایش اکسس لیست": [
+    "cmd_0034"
+  ],
+  "configure extended acl": [
+    "cmd_0035"
+  ],
+  "extended access list": [
+    "cmd_0035"
+  ],
+  "ساخت اکسس لیست": [
+    "cmd_0035"
+  ],
+  "show nat translations": [
+    "cmd_0036"
+  ],
+  "show ip nat translations": [
+    "cmd_0036"
+  ],
+  "نمایش نت": [
+    "cmd_0036"
+  ],
+  "configure nat overload (pat)": [
+    "cmd_0037"
+  ],
+  "ip nat overload": [
+    "cmd_0037"
+  ],
+  "پیکربندی نت": [
+    "cmd_0037"
+  ],
+  "show vrf": [
+    "cmd_0038"
+  ],
+  "show ip vrf": [
+    "cmd_0038"
+  ],
+  "vrf list": [
+    "cmd_0038"
+  ],
+  "نمایش وی آر اف": [
+    "cmd_0038"
+  ],
+  "configure vrf": [
+    "cmd_0039"
+  ],
+  "ip vrf config": [
+    "cmd_0039"
+  ],
+  "ساخت وی آر اف": [
+    "cmd_0039"
+  ],
+  "enable aaa new-model": [
+    "cmd_0040"
+  ],
+  "aaa new-model": [
+    "cmd_0040"
+  ],
+  "فعال سازی aaa": [
+    "cmd_0040"
+  ],
+  "show aaa sessions": [
+    "cmd_0041",
+    "cmd_0041"
+  ],
+  "نشست های aaa": [
+    "cmd_0041"
+  ],
+  "configure radius server": [
+    "cmd_0042"
+  ],
+  "radius server config": [
+    "cmd_0042"
+  ],
+  "تنظیم رادیوس": [
+    "cmd_0042"
+  ],
+  "show radius statistics": [
+    "cmd_0043",
+    "cmd_0043"
+  ],
+  "آمار رادیوس": [
+    "cmd_0043"
+  ],
+  "configure tacacs+ server": [
+    "cmd_0044"
+  ],
+  "tacacs server config": [
+    "cmd_0044"
+  ],
+  "تنظیم تاکاکس": [
+    "cmd_0044"
+  ],
+  "show tacacs status": [
+    "cmd_0045"
+  ],
+  "show tacacs": [
+    "cmd_0045"
+  ],
+  "وضعیت تاکاکس": [
+    "cmd_0045"
+  ],
+  "show hsrp status": [
+    "cmd_0046"
+  ],
+  "show standby": [
+    "cmd_0046"
+  ],
+  "وضعیت hsrp": [
+    "cmd_0046"
+  ],
+  "configure hsrp": [
+    "cmd_0047"
+  ],
+  "standby config": [
+    "cmd_0047"
+  ],
+  "پیکربندی hsrp": [
+    "cmd_0047"
+  ],
+  "show vrrp status": [
+    "cmd_0048"
+  ],
+  "show vrrp": [
+    "cmd_0048"
+  ],
+  "وضعیت vrrp": [
+    "cmd_0048"
+  ],
+  "configure vrrp": [
+    "cmd_0049"
+  ],
+  "vrrp config": [
+    "cmd_0049"
+  ],
+  "پیکربندی vrrp": [
+    "cmd_0049"
+  ],
+  "show glbp status": [
+    "cmd_0050"
+  ],
+  "show glbp": [
+    "cmd_0050"
+  ],
+  "وضعیت glbp": [
+    "cmd_0050"
+  ],
+  "show pim neighbors": [
+    "cmd_0051"
+  ],
+  "pim neighbors": [
+    "cmd_0051"
+  ],
+  "show ip pim neighbor": [
+    "cmd_0051"
+  ],
+  "همسایگان pim": [
+    "cmd_0051"
+  ],
+  "show pim rp mapping": [
+    "cmd_0052"
+  ],
+  "pim rp": [
+    "cmd_0052"
+  ],
+  "show ip pim rp mapping": [
+    "cmd_0052"
+  ],
+  "show igmp groups": [
+    "cmd_0053"
+  ],
+  "igmp groups": [
+    "cmd_0053"
+  ],
+  "show ip igmp groups": [
+    "cmd_0053"
+  ],
+  "گروه های igmp": [
+    "cmd_0053"
+  ],
+  "show snmp status": [
+    "cmd_0054"
+  ],
+  "show snmp": [
+    "cmd_0054"
+  ],
+  "وضعیت اس ان ام پی": [
+    "cmd_0054"
+  ],
+  "configure snmp community": [
+    "cmd_0055"
+  ],
+  "snmp-server community": [
+    "cmd_0055"
+  ],
+  "تنظیم snmp": [
+    "cmd_0055"
+  ],
+  "show netflow statistics": [
+    "cmd_0056"
+  ],
+  "show ip cache flow": [
+    "cmd_0056"
+  ],
+  "آمار نت فلو": [
+    "cmd_0056"
+  ],
+  "configure flow exporter": [
+    "cmd_0057"
+  ],
+  "flow exporter config": [
+    "cmd_0057"
+  ],
+  "تنظیم فلو اکسپورتر": [
+    "cmd_0057"
+  ],
+  "show telemetry sessions": [
+    "cmd_0058"
+  ],
+  "model-driven telemetry": [
+    "cmd_0058"
+  ],
+  "show telemetry": [
+    "cmd_0058"
+  ],
+  "show logging buffer": [
+    "cmd_0059"
+  ],
+  "show log": [
+    "cmd_0059"
+  ],
+  "لاگ ها": [
+    "cmd_0059"
+  ],
+  "configure syslog server": [
+    "cmd_0060"
+  ],
+  "logging host": [
+    "cmd_0060"
+  ],
+  "تنظیم syslog": [
+    "cmd_0060"
+  ],
+  "debug ip packet": [
+    "cmd_0061",
+    "cmd_0061"
+  ],
+  "دیباگ پکت": [
+    "cmd_0061"
+  ],
+  "undebug all": [
+    "cmd_0062"
+  ],
+  "no debug all": [
+    "cmd_0062"
+  ],
+  "u all": [
+    "cmd_0062"
+  ],
+  "خاموش کردن دیباگ": [
+    "cmd_0062"
+  ],
+  "show users / sessions": [
+    "cmd_0063"
+  ],
+  "show users": [
+    "cmd_0063"
+  ],
+  "کاربران فعال": [
+    "cmd_0063"
+  ],
+  "enable secret password": [
+    "cmd_0064"
+  ],
+  "enable secret": [
+    "cmd_0064"
+  ],
+  "رمز عبور enable": [
+    "cmd_0064"
+  ],
+  "show mac address table": [
+    "cmd_0065"
+  ],
+  "show mac table": [
+    "cmd_0065"
+  ],
+  "mac address table": [
+    "cmd_0065"
+  ],
+  "جدول مک": [
+    "cmd_0065"
+  ],
+  "نمایش جدول مک": [
+    "cmd_0065"
+  ],
+  "show spanning tree": [
+    "cmd_0066"
+  ],
+  "show stp": [
+    "cmd_0066"
+  ],
+  "spanning tree status": [
+    "cmd_0066"
+  ],
+  "وضعیت اسپنینگ تری": [
+    "cmd_0066"
+  ],
+  "configure stp root priority": [
+    "cmd_0067"
+  ],
+  "spanning-tree priority": [
+    "cmd_0067"
+  ],
+  "پرایوریتی stp": [
+    "cmd_0067"
+  ],
+  "enable rapid-pvst": [
+    "cmd_0068"
+  ],
+  "spanning-tree mode rapid-pvst": [
+    "cmd_0068"
+  ],
+  "فعال کردن rstp": [
+    "cmd_0068"
+  ],
+  "configure mst region": [
+    "cmd_0069"
+  ],
+  "spanning-tree mst configuration": [
+    "cmd_0069"
+  ],
+  "تنظیم mst": [
+    "cmd_0069"
+  ],
+  "show vlans": [
+    "cmd_0070"
+  ],
+  "show vlan": [
+    "cmd_0070"
+  ],
+  "vlan list": [
+    "cmd_0070"
+  ],
+  "نمایش vlan ها": [
+    "cmd_0070"
+  ],
+  "create vlan": [
+    "cmd_0071"
+  ],
+  "vlan config": [
+    "cmd_0071"
+  ],
+  "ساخت vlan": [
+    "cmd_0071"
+  ],
+  "show etherchannel summary": [
+    "cmd_0072"
+  ],
+  "show etherchannel": [
+    "cmd_0072"
+  ],
+  "خلاصه اترچنل": [
+    "cmd_0072"
+  ],
+  "configure lacp port-channel": [
+    "cmd_0073"
+  ],
+  "channel-group lacp": [
+    "cmd_0073"
+  ],
+  "پیکربندی لک پی": [
+    "cmd_0073"
+  ],
+  "show udld status": [
+    "cmd_0074"
+  ],
+  "show udld": [
+    "cmd_0074"
+  ],
+  "وضعیت udld": [
+    "cmd_0074"
+  ],
+  "show cdp neighbors": [
+    "cmd_0075"
+  ],
+  "cdp neighbors": [
+    "cmd_0075"
+  ],
+  "show cdp neighbor": [
+    "cmd_0075"
+  ],
+  "همسایگان cdp": [
+    "cmd_0075"
+  ],
+  "show lldp neighbors": [
+    "cmd_0076"
+  ],
+  "lldp neighbors": [
+    "cmd_0076"
+  ],
+  "show lldp neighbor": [
+    "cmd_0076"
+  ],
+  "همسایگان lldp": [
+    "cmd_0076"
+  ],
+  "show arp table": [
+    "cmd_0077"
+  ],
+  "show arp": [
+    "cmd_0077"
+  ],
+  "arp table": [
+    "cmd_0077"
+  ],
+  "نمایش arp": [
+    "cmd_0077"
+  ],
+  "جدول arp": [
+    "cmd_0077"
+  ],
+  "میخوام arp بگیرم": [
+    "cmd_0077"
+  ],
+  "نمایش جدول arp": [
+    "cmd_0077"
+  ],
+  "ping (ipv4 connectivity test)": [
+    "cmd_0078"
+  ],
+  "ping test": [
+    "cmd_0078"
+  ],
+  "پینگ": [
+    "cmd_0078"
+  ],
+  "traceroute": [
+    "cmd_0079",
+    "cmd_0079"
+  ],
+  "trace route": [
+    "cmd_0079"
+  ],
+  "تریس روت": [
+    "cmd_0079"
+  ],
+  "configure ipv4 address on interface": [
+    "cmd_0080"
+  ],
+  "ip address config": [
+    "cmd_0080"
+  ],
+  "تنظیم آی پی": [
+    "cmd_0080"
+  ],
+  "show ipv6 neighbors": [
+    "cmd_0081"
+  ],
+  "show ipv6 neighbor": [
+    "cmd_0081"
+  ],
+  "همسایگان ipv6": [
+    "cmd_0081"
+  ],
+  "configure ipv6 address": [
+    "cmd_0082"
+  ],
+  "ipv6 address config": [
+    "cmd_0082"
+  ],
+  "تنظیم آی پی وی۶": [
+    "cmd_0082"
+  ],
+  "show dhcp bindings": [
+    "cmd_0083"
+  ],
+  "show ip dhcp binding": [
+    "cmd_0083"
+  ],
+  "لیز دی اچ سی پی": [
+    "cmd_0083"
+  ],
+  "configure dhcp pool": [
+    "cmd_0084"
+  ],
+  "ip dhcp pool": [
+    "cmd_0084"
+  ],
+  "ساخت پول dhcp": [
+    "cmd_0084"
+  ],
+  "configure dns server": [
+    "cmd_0085"
+  ],
+  "ip name-server": [
+    "cmd_0085"
+  ],
+  "تنظیم دی ان اس": [
+    "cmd_0085"
+  ],
+  "show ntp status": [
+    "cmd_0086"
+  ],
+  "show ntp": [
+    "cmd_0086"
+  ],
+  "وضعیت ntp": [
+    "cmd_0086"
+  ],
+  "configure ntp server": [
+    "cmd_0087"
+  ],
+  "ntp server": [
+    "cmd_0087"
+  ],
+  "تنظیم ntp": [
+    "cmd_0087"
+  ],
+  "set logging severity level": [
+    "cmd_0088"
+  ],
+  "logging trap": [
+    "cmd_0088"
+  ],
+  "سطح لاگ": [
+    "cmd_0088"
+  ],
+  "show ip sla statistics": [
+    "cmd_0089",
+    "cmd_0089"
+  ],
+  "آمار آی پی اسلا": [
+    "cmd_0089"
+  ],
+  "configure ip sla icmp echo": [
+    "cmd_0090"
+  ],
+  "ip sla icmp-echo": [
+    "cmd_0090"
+  ],
+  "تنظیم آی پی اسلا": [
+    "cmd_0090"
+  ],
+  "show route-map": [
+    "cmd_0091",
+    "cmd_0091"
+  ],
+  "نمایش روت مپ": [
+    "cmd_0091"
+  ],
+  "apply policy-based routing to interface": [
+    "cmd_0092"
+  ],
+  "ip policy route-map": [
+    "cmd_0092"
+  ],
+  "اعمال pbr": [
+    "cmd_0092"
+  ],
+  "show ip multicast routing table": [
+    "cmd_0093"
+  ],
+  "show ip mroute": [
+    "cmd_0093"
+  ],
+  "جدول مولتی کست": [
+    "cmd_0093"
+  ],
+  "enable ip multicast routing": [
+    "cmd_0094"
+  ],
+  "ip multicast-routing": [
+    "cmd_0094"
+  ],
+  "فعال سازی مولتی کست": [
+    "cmd_0094"
+  ],
+  "show running configuration": [
+    "cmd_0095"
+  ],
+  "show run": [
+    "cmd_0095"
+  ],
+  "running config": [
+    "cmd_0095"
+  ],
+  "نمایش کانفیگ": [
+    "cmd_0095"
+  ],
+  "save configuration": [
+    "cmd_0096"
+  ],
+  "write memory": [
+    "cmd_0096"
+  ],
+  "copy run start": [
+    "cmd_0096"
+  ],
+  "ذخیره کانفیگ": [
+    "cmd_0096"
+  ],
+  "show version": [
+    "cmd_0097"
+  ],
+  "show ver": [
+    "cmd_0097"
+  ],
+  "نسخه سیستم عامل": [
+    "cmd_0097"
+  ],
+  "reload device": [
+    "cmd_0098"
+  ],
+  "reload": [
+    "cmd_0098"
+  ],
+  "ریستارت دستگاه": [
+    "cmd_0098"
+  ],
+  "show cpu and memory usage": [
+    "cmd_0099"
+  ],
+  "show processes cpu": [
+    "cmd_0099"
+  ],
+  "منابع سیستم": [
+    "cmd_0099"
+  ],
+  "configure telnet/ssh vty access": [
+    "cmd_0100"
+  ],
+  "line vty config": [
+    "cmd_0100"
+  ],
+  "تنظیم دسترسی vty": [
+    "cmd_0100"
+  ],
+  "show interface transceiver / optics": [
+    "cmd_0101"
+  ],
+  "show interface transceiver": [
+    "cmd_0101"
+  ],
+  "وضعیت ماژول نوری": [
+    "cmd_0101"
+  ],
+  "show port-channel load balance": [
+    "cmd_0102"
+  ],
+  "port-channel load-balance": [
+    "cmd_0102"
+  ],
+  "توزیع بار اترچنل": [
+    "cmd_0102"
+  ],
+  "show vlan trunk status": [
+    "cmd_0103"
+  ],
+  "show interfaces trunk": [
+    "cmd_0103"
+  ],
+  "وضعیت ترانک": [
+    "cmd_0103"
+  ],
+  "show ospf database summary": [
+    "cmd_0104"
+  ],
+  "ospf lsa summary": [
+    "cmd_0104"
+  ],
+  "خلاصه پایگاه داده ospf": [
+    "cmd_0104"
+  ],
+  "show bgp regexp / as-path filter": [
+    "cmd_0105"
+  ],
+  "show ip bgp regexp": [
+    "cmd_0105"
+  ],
+  "فیلتر مسیر bgp": [
+    "cmd_0105"
+  ],
+  "show interface load statistics": [
+    "cmd_0106"
+  ],
+  "show interfaces stats": [
+    "cmd_0106"
+  ],
+  "بار ترافیک اینترفیس": [
+    "cmd_0106"
+  ],
+  "show access-list hit counters": [
+    "cmd_0107"
+  ],
+  "show acl hit count": [
+    "cmd_0107"
+  ],
+  "شمارنده اکسس لیست": [
+    "cmd_0107"
+  ],
+  "show cef table": [
+    "cmd_0108"
+  ],
+  "show ip cef": [
+    "cmd_0108"
+  ],
+  "جدول cef": [
+    "cmd_0108"
+  ],
+  "show interface qos queueing": [
+    "cmd_0109"
+  ],
+  "show queueing interface": [
+    "cmd_0109"
+  ],
+  "صف بندی کیو او اس": [
+    "cmd_0109"
+  ],
+  "show interface rate limiting / policing": [
+    "cmd_0110"
+  ],
+  "show policy-map interface police": [
+    "cmd_0110"
+  ],
+  "پالیسینگ کیو او اس": [
+    "cmd_0110"
+  ],
+  "show environment (power/fan/temp)": [
+    "cmd_0111"
+  ],
+  "show environment": [
+    "cmd_0111"
+  ],
+  "وضعیت محیطی دستگاه": [
+    "cmd_0111"
+  ],
+  "show inventory": [
+    "cmd_0112",
+    "cmd_0112"
+  ],
+  "نمایش موجودی سخت افزار": [
+    "cmd_0112"
+  ],
+  "show ip ospf border routers": [
+    "cmd_0113"
+  ],
+  "show ip ospf border-routers": [
+    "cmd_0113"
+  ],
+  "روترهای مرزی ospf": [
+    "cmd_0113"
+  ],
+  "show bgp vpnv4 table": [
+    "cmd_0114"
+  ],
+  "show bgp vpnv4": [
+    "cmd_0114"
+  ],
+  "جدول vpnv4": [
+    "cmd_0114"
+  ],
+  "show segment routing srv6 locators": [
+    "cmd_0115"
+  ],
+  "srv6 locators": [
+    "cmd_0115"
+  ],
+  "show segment-routing srv6": [
+    "cmd_0115"
+  ],
+  "show evpn ethernet segment": [
+    "cmd_0116"
+  ],
+  "show evpn ethernet-segment": [
+    "cmd_0116"
+  ],
+  "سگمنت اترنت evpn": [
+    "cmd_0116"
+  ],
+  "show vxlan flood-list": [
+    "cmd_0117"
+  ],
+  "vxlan flood list": [
+    "cmd_0117"
+  ],
+  "show nve flood-list": [
+    "cmd_0117"
+  ]
 }

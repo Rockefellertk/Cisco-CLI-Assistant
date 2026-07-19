@@ -1,0 +1,19 @@
+{
+  "name": "cisco-cli-assistant-bot",
+  "version": "1.0.0",
+  "description": "Cisco CLI Assistant Telegram Bot - runs serverlessly on Cloudflare Workers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "set-webhook": "node scripts/set-webhook.mjs",
+    "delete-webhook": "node scripts/delete-webhook.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "wrangler": "^3.78.0",
+    "@cloudflare/workers-types": "^4.20240925.0"
+  }
+}
