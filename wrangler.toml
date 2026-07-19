@@ -6,9 +6,9 @@ compatibility_flags = ["nodejs_compat"]
 [[
 kv_namespaces
 ]]
-binding = "KV"
-id = "17074a928b9842a88402f4ae8d2b415a"
-preview_id = "17074a928b9842a88402f4ae8d2b415a"
+binding = "CLI"
+id = "285f68c004fd4169a9d869e4565a3bcd"
+preview_id = "285f68c004fd4169a9d869e4565a3bcd"
 
 [vars]
 AI_ENABLED = "true"
